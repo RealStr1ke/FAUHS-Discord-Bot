@@ -1,7 +1,14 @@
-require('dotenv').config();
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+// const Discord = require('discord.js');
 
-const TOKEN = process.env.TOKEN;
+// using Intents class
+const client = new Discord.Client();
 
-bot.login(TOKEN);
+client.on('message', (msg) => {
+  // Send back a reply when the specific command has been written by a user.
+  if (msg.content === '!hello') {
+    msg.reply('Hello World!');
+  }
+});
+
+client.login('my_token');
