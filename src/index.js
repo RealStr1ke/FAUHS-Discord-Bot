@@ -1,14 +1,14 @@
-const Discord = require('discord.js');
-// const Discord = require('discord.js');
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+const { token } = require('./config.json');
 
-// using Intents class
-const client = new Discord.Client();
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on('message', (msg) => {
-  // Send back a reply when the specific command has been written by a user.
-  if (msg.content === '!hello') {
-    msg.reply('Hello World!');
-  }
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
 });
 
-client.login('my_token');
+// Login to Discord with your client's token
+client.login(token);
