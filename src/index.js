@@ -1,10 +1,7 @@
-require('dotenv').config(); 
+require('dotenv').config();
 const Discord = require('discord.js');
+const bot = new Discord.Client();
 
-const client = new Discord.Client();
+const TOKEN = process.env.TOKEN;
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.login(process.env.CLIENT_TOKEN);
+bot.login(TOKEN);
