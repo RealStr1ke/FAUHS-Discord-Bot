@@ -4,3 +4,4 @@ src/.env
 src/config.json
 .env
 .replit
+src/.eslintrc.json
