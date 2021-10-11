@@ -2,3 +2,5 @@ src/node/
 src/node_modules/
 src/.env
 src/config.json
+.env
+.replit
