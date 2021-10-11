@@ -1,7 +1,6 @@
-src/node/
-src/node_modules/
-src/.env
-src/config.json
+node/
+node_modules/
+config.json
 .env
 .replit
-src/.eslintrc.json
+.eslintrc.json
