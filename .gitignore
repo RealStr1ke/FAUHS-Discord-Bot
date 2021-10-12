@@ -3,4 +3,6 @@ node_modules/
 config.json
 .env
 .replit
-.eslintrc.json
+.bash_profile
+.bashrc
+.zprofile
