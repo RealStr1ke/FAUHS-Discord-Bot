@@ -6,3 +6,4 @@ config.json
 .bash_profile
 .bashrc
 .zprofile
+goorm.manifest
