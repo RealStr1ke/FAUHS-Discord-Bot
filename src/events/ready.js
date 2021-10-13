@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = (client, message) => {
 	name: 'ready',
 	once: true,
 	execute(client) {
