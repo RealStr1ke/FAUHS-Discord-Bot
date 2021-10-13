@@ -1,33 +1,23 @@
 {
-  "name": "fauhs-discord-bot",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "axios": "^0.22.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.2.0",
+    "dotenv": "^10.0.0"
+  },
+  "name": "src",
   "version": "1.0.0",
-  "description": "The Discord Bot for the FAU High School Class of 2021 Discord Server",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://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@github.com/TheStrikeYT/FAUHS-Discord-Bot.git"
-  },
-  "keywords": [
-    "discord",
-    "discord-bot",
-    "fauhs",
-    "fauhigh",
-    "fauhighschool",
-    "nodejs",
-    "discordjs"
-  ],
-  "author": "Thandi Menelas",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/TheStrikeYT/FAUHS-Discord-Bot/issues"
-  },
-  "homepage": "https://github.com/TheStrikeYT/FAUHS-Discord-Bot#readme",
-  "dependencies": {
-    "@discordjs/rest": "^0.1.0-canary.0",
-    "discord-api-types": "^0.23.1",
-    "discord.js": "^13.2.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.0.0"
   }
 }
