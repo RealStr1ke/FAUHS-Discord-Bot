@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.22.0",
+    "better-sqlite3": "^7.4.3",
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
     "google-apis": "^1.0.0",
-    "node": "^16.10.0"
+    "node": "^16.10.0",
+    "node-gyp": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {
