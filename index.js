@@ -5,11 +5,11 @@ const { token } = require('./config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.commands = new Collection();
-const slashCommandFiles = fs.readdirSync('./commands/slash').filter(file => file.endsWith('.js'));
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+const slashCommandFiles = fs.readdirSync('./src/commands/slash').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
 
 for (const file of eventFiles) {
-	const event = require(`./events/${file}`);
+	const event = require(`./src/events/${file}`);
 	if (event.once) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
@@ -18,7 +18,7 @@ for (const file of eventFiles) {
 }
 
 for (const file of slashCommandFiles) {
-	const command = require(`./commands/slash/${file}`);
+	const command = require(`./src/commands/slash/${file}`);
 	client.commands.set(command.data.name, command);
 }
 
