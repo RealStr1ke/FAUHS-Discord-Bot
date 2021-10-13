@@ -40,6 +40,7 @@ client.config = config;
 fs.readdir("./src/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
+    if (!file.endsWith(".js")) return;
     const event = require(`./src/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
@@ -57,6 +58,17 @@ fs.readdir("./src/commands/", (err, files) => {
     console.log(`Attempting to load command ${commandName}`);
     client.commands.set(commandName, props);
   });
+});
+
+client.on("message", (message) => {
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+
+  if (message.content.startsWith(config.prefix + "ping")) {
+    message.channel.send("pong!");
+  } else
+  if (message.content.startsWith(config.prefix + "foo")) {
+    message.channel.send("bar!");
+  }
 });
 
 client.login(config.token);
