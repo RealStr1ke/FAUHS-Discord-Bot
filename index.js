@@ -1,8 +1,9 @@
-const fs = require('fs');
-const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('./config.json');
+const Discord = require("discord.js");
+const fs = require("fs");
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Discord.Client();
+const config = require("./config.json");
+
 
 client.commands = new Collection();
 const slashCommandFiles = fs.readdirSync('./src/commands/slash').filter(file => file.endsWith('.js'));
@@ -37,4 +38,4 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.login(token);
+client.login(config.token);
