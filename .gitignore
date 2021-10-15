@@ -2,10 +2,9 @@ node/
 node_modules/
 config.json
 config.js
-.env
+*.env
 .replit
-.nix
-.replit.nix
+*.nix
 .bash_profile
 .bashrc
 .zprofile
