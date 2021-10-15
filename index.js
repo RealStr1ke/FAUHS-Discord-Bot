@@ -9,7 +9,7 @@ const { Client, Collection } = require("discord.js");
 // We also load the rest of the things we need in this file:
 const { readdirSync } = require("fs");
 const { intents, partials, permLevels } = require("./config.js");
-const logger = require("./modules/Logger.js");
+const logger = require("./src/modules/Logger.js");
 // This is your client. Some people call it `bot`, some people call it `self`,
 // some might call it `cootchie`. Either way, when you see `client.something`,
 // or `bot.something`, this is what we're referring to. Your client.
@@ -54,7 +54,7 @@ const init = async () => {
     });
   }
 
-  // Now we load any **slash** commands you may have in the ./slash directory.
+  // Now we load any **slash** commands you may have in the ./src/slash directory.
   const slashFiles = readdirSync("./src/slash").filter(file => file.endsWith(".js"));
   for (const file of slashFiles) {
     const command = require(`./src/slash/${file}`);
@@ -80,7 +80,7 @@ const init = async () => {
   // Threads are currently in BETA.
   // This event will fire when a thread is created, if you want to expand
   // the logic, throw this in it's own event file like the rest.
-  client.on("threadCreate", (thread) => thread.join());
+  // client.on("threadCreate", (thread) => thread.join());
 
   // Here we login the client.
   client.login();

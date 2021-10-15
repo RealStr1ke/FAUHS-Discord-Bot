@@ -4,13 +4,16 @@
   "description": "Source code for the FAU High School Discord Bot",
   "main": "index.js",
   "dependencies": {
+    "@sapphire/time-utilities": "^1.4.3",
     "axios": "^0.22.0",
     "better-sqlite3": "^7.4.3",
+    "colorette": "^2.0.16",
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
     "google-apis": "^1.0.0",
     "node": "^16.10.0",
-    "node-gyp": "^8.2.0"
+    "node-gyp": "^8.2.0",
+    "npm": "^8.1.0"
   },
   "scripts": {
     "test": "node ."
