@@ -5,6 +5,7 @@ config.js
 *.env
 .replit
 *.nix
+.cache/
 .bash_profile
 .bashrc
 .zprofile
