@@ -12,7 +12,6 @@
     "node": "^16.10.0",
     "node-gyp": "^8.2.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "node ."
   },
