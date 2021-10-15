@@ -1,6 +1,7 @@
 node/
 node_modules/
 config.json
+config.js
 .env
 .replit
 .bash_profile
