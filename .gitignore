@@ -4,6 +4,7 @@ config.json
 config.js
 .env
 .replit
+.replit.nix
 .bash_profile
 .bashrc
 .zprofile
