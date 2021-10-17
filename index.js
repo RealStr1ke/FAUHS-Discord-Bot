@@ -8,8 +8,8 @@ require("dotenv").config();
 const { Client, Collection } = require("discord.js");
 // We also load the rest of the things we need in this file:
 const { readdirSync } = require("fs");
-const { intents, partials, permLevels } = require("./config.js");
-const logger = require("./src/modules/Logger.js");
+const { intents, partials, permLevels } = require(".config.js");
+const logger = require("./modules/Logger.js");
 // This is your client. Some people call it `bot`, some people call it `self`,
 // some might call it `cootchie`. Either way, when you see `client.something`,
 // or `bot.something`, this is what we're referring to. Your client.
@@ -44,9 +44,9 @@ const init = async () => {
 
   // Here we load **commands** into memory, as a collection, so they're accessible
   // here and everywhere else.
-  const commands = readdirSync("./src/commands/").filter(file => file.endsWith(".js"));
+  const commands = readdirSync("./commands/").filter(file => file.endsWith(".js"));
   for (const file of commands) {
-    const props = require(`./src/commands/${file}`);
+    const props = require(`./commands/${file}`);
     logger.log(`Loading Command: ${props.help.name}. 👌`, "log");
     client.container.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
@@ -55,9 +55,9 @@ const init = async () => {
   }
 
   // Now we load any **slash** commands you may have in the ./src/slash directory.
-  const slashFiles = readdirSync("./src/slash").filter(file => file.endsWith(".js"));
+  const slashFiles = readdirSync("./slash").filter(file => file.endsWith(".js"));
   for (const file of slashFiles) {
-    const command = require(`./src/slash/${file}`);
+    const command = require(`./slash/${file}`);
     const commandName = file.split(".")[0];
     logger.log(`Loading Slash command: ${commandName}. 👌`, "log");
     
@@ -66,11 +66,11 @@ const init = async () => {
   }
 
   // Then we load events, which will include our message and ready event.
-  const eventFiles = readdirSync("./src/events/").filter(file => file.endsWith(".js"));
+  const eventFiles = readdirSync("./events/").filter(file => file.endsWith(".js"));
   for (const file of eventFiles) {
     const eventName = file.split(".")[0];
     logger.log(`Loading Event: ${eventName}. 👌`, "log");
-    const event = require(`./src/events/${file}`);
+    const event = require(`./events/${file}`);
     // Bind the client to any event, before the existing arguments
     // provided by the discord.js event. 
     // This line is awesome by the way. Just sayin'.
