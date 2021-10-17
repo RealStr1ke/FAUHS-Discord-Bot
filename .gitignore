@@ -62,3 +62,15 @@ typings/
 .env
 
 /.vscode/
+
+# FAUHS Bot Edits
+# ----------------
+
+# REPL.IT files
+*.replit
+
+# NixOS files
+*.nix
+
+# Manifest files
+*.manifest
