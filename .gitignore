@@ -60,6 +60,7 @@ typings/
 
 # dotenv environment variables file
 .env
+env.json
 
 /.vscode/
 
@@ -68,9 +69,14 @@ typings/
 
 # REPL.IT files
 *.replit
+.cache/
+.cache/*
 
 # NixOS files
 *.nix
 
 # Manifest files
 *.manifest
+
+# Other files
+sheets-test.js
