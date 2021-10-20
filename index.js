@@ -1,22 +1,13 @@
-// This will check if the node version you are running is the required
-// Node version, if it isn't it will throw the following error to inform
-// you.
 if (Number(process.version.slice(1).split(".")[0]) < 16) throw new Error("Node 16.x or higher is required. Update Node on your system.");
 require("dotenv").config();
 
-// Load up the discord.js library
 const { Client, Collection } = require("discord.js");
-// We also load the rest of the things we need in this file:
 const { readdirSync } = require("fs");
 const { intents, partials, permLevels } = require("./config.js");
 const logger = require("./modules/Logger.js");
-// This is your client. Some people call it `bot`, some people call it `self`,
-// some might call it `cootchie`. Either way, when you see `client.something`,
-// or `bot.something`, this is what we're referring to. Your client.
+
 const client = new Client({ intents, partials });
 
-// Aliases, commands and slash commands are put in collections where they can be
-// read from, catalogued, listed, etc.
 const commands = new Collection();
 const aliases = new Collection();
 const slashcmds = new Collection();
@@ -36,9 +27,6 @@ client.container = {
   slashcmds,
   levelCache
 };
-
-// We're doing real fancy node 8 async/await stuff here, and to do that
-// we need to wrap stuff in an anonymous function. It's annoying but it works.
 
 const init = async () => {
 
