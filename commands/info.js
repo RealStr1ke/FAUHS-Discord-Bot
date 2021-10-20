@@ -3,19 +3,19 @@ const { settings } = require("../modules/settings.js");
 exports.run = async (client, message, args, level) => {
   const friendly = config.permLevels.find(l => l.level === level).name;
   const replying = settings.ensure(message.guild.id, config.defaultSettings).commandReply;
-  message.reply({ content: `Your permission level is: ${level} - ${friendly}`, allowedMentions: { repliedUser: (replying === "true") }});
+  message.reply({ content: `**Incomplete Command**`, allowedMentions: { repliedUser: (replying === "true") }});
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ["inf", "i"],
   permLevel: "User"
 };
 
 exports.help = {
-  name: "mylevel",
+  name: "info",
   category: "Miscellaneous",
-  description: "Tells you your permission level for the current message location.",
-  usage: "mylevel"
+  description: "Shows you the bot info and links.",
+  usage: "info"
 };
