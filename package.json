@@ -137,6 +137,7 @@
     "glob-parent": "^5.1.2",
     "globals": "^13.11.0",
     "google-spreadsheet": "^3.1.15",
+    "googleapis": "^39.2.0",
     "graceful-fs": "^4.2.8",
     "has": "^1.0.3",
     "has-bigints": "^1.0.1",
