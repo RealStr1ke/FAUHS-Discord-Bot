@@ -79,4 +79,5 @@ env.json
 *.manifest
 
 # Other files
-sheets-test.js
+gstest.js
+gcp-creds.json
