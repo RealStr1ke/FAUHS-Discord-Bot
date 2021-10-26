@@ -32,16 +32,16 @@ const init = async () => {
 
   // Here we load **commands** into memory, as a collection, so they're accessible
   // here and everywhere else.
-  const commandDirs = await readdirSync("./commands/");
+  const commandDirs = await readdirSync(`./commands/`);
   logger.log(`Loading ${commandDirs.length} Categories.`, "log");
   commandDirs.forEach(async (dir) => {
-		const commands = await readdirSync("./commands/"+dir+"/");
-  logger.log(`Loading ${dir} Category.`, "log");
+		const commands = await readdirSync(`./commands/${dir}/`).filter(d => d.endsWith('.js'));
+    logger.log(`Loading ${dir} Category.`, "log");
     for (const file of commands) {
       const props = require(`./commands/${dir}/${file}`);
       logger.log(`Loading Command: ${props.help.name}. 👌`, "log");
-    client.container.commands.set(props.help.name, props);
-    props.conf.aliases.forEach(alias => {
+      client.container.commands.set(props.help.name, props);
+      props.conf.aliases.forEach(alias => {
       client.container.aliases.set(alias, props.help.name);
     });
     }

@@ -1,4 +1,4 @@
-const config = require("../config.js");
+const config = require("../../config.js");
 const { version } = require("discord.js");
 const { codeBlock } = require("@discordjs/builders");
 const { settings } = require("../../modules/settings.js");
