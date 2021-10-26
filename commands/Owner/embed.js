@@ -1,7 +1,6 @@
-const config = require("../config.js");
-const { settings } = require("../modules/settings.js");
+const config = require("../../config.js");
+const { settings } = require("../../modules/settings.js");
 exports.run = async (client, message, args, level) => {
-  const friendly = config.permLevels.find(l => l.level === level).name;
 const exampleEmbed = {
 	color: 0x0099ff,
 	title: 'Some title',
