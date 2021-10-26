@@ -32,15 +32,20 @@ const init = async () => {
 
   // Here we load **commands** into memory, as a collection, so they're accessible
   // here and everywhere else.
-  const commands = readdirSync("./commands/").filter(file => file.endsWith(".js"));
-  for (const file of commands) {
-    const props = require(`./commands/${file}`);
-    logger.log(`Loading Command: ${props.help.name}. 👌`, "log");
+  const commandDirs = await readdirSync("./commands/");
+  logger.log(`Loading ${commandDirs.length} Categories.`, "log");
+  commandDirs.forEach(async (dir) => {
+		const commands = await readdirSync("./commands/"+dir+"/");
+  logger.log(`Loading ${dir} Category.`, "log");
+    for (const file of commands) {
+      const props = require(`./commands/${dir}/${file}`);
+      logger.log(`Loading Command: ${props.help.name}. 👌`, "log");
     client.container.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.container.aliases.set(alias, props.help.name);
     });
-  }
+    }
+	});
 
   // Now we load any **slash** commands you may have in the ./slash directory.
   const slashFiles = readdirSync("./slash").filter(file => file.endsWith(".js"));
