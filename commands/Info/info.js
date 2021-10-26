@@ -1,4 +1,4 @@
-const config = require("../config.js");
+const config = require("../../config.js");
 const { settings } = require("../../modules/settings.js");
 exports.run = async (client, message, args, level) => {
   const friendly = config.permLevels.find(l => l.level === level).name;

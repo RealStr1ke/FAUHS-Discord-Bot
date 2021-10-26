@@ -1,6 +1,6 @@
 {
   "name": "fauhs-discord-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Source code for the FAU High School Discord Bot",
   "main": "index.js",
   "dependencies": {
@@ -358,5 +358,6 @@
   "bugs": {
     "url": "https://github.com/RealStr1ke/FAUHS-Discord-Bot/issues"
   },
-  "homepage": "https://github.com/RealStr1ke/FAUHS-Discord-Bot#readme"
+  "homepage": "https://github.com/RealStr1ke/FAUHS-Discord-Bot#readme",
+  "devDependencies": {}
 }

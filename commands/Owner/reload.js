@@ -1,4 +1,4 @@
-const config = require("../config.js");
+const config = require("../../config.js");
 const { settings } = require("../../modules/settings.js");
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   // Grab the container from the client to reduce line length.
