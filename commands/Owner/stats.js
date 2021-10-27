@@ -14,32 +14,25 @@ exports.run = (client, message, args, level) => { // eslint-disable-line no-unus
 	description: 'Here are the current bot stats: ',
 	fields: [
 		{
-			name: 'Mem Usage:',
-			value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``,
+			name: `Mem Usage: \`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``
 		},
 		{
-			name: 'Uptime',
-			value: `\`${duration}\``,
+			name: `Uptime: \`${duration}\``
 		},
 		{
-			name: 'Users',
-			value: `\`${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}\``,
+			name: `Users: \`${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}\``
 		},
 		{
-			name: 'Servers:',
-			value: `\`${client.guilds.cache.size.toLocaleString()}\``,
+			name: `Servers: \`${client.guilds.cache.size.toLocaleString()}\``
 		},
 		{
-			name: 'Channels:',
-			value: `\`${client.channels.cache.size.toLocaleString()}\``,
+			name: `Channels: \`${client.channels.cache.size.toLocaleString()}\``
 		},
 		{
-			name: 'DiscordJS Ver.:',
-			value: `\`v${version}\``,
+			name: `DiscordJS Ver.: \`v${version}\``
 		},
 		{
-			name: 'Node Ver.:',
-			value: `\`${process.version}\``,
+			name: `Node Ver.: \`${process.version}\``
 		},
 	],
 	timestamp: new Date(),
