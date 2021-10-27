@@ -8,8 +8,8 @@ exports.run = async (client, message, args, level) => {
 	url: 'https://github.com/RealStr1ke/FAUHS-Discord-Bot/',
 	author: {
 		name: 'RealStr1ke',
-		icon_url: 'https://github.com/RealStr1ke',
-		url: 'https://cdn.discordapp.com/avatars/411641088944766982/5489f885a60acfa2c50cca1fddd458d5.png?size=1024',
+		icon_url: 'https://cdn.discordapp.com/avatars/411641088944766982/5489f885a60acfa2c50cca1fddd458d5.png?size=1024',
+		url: 'https://github.com/RealStr1ke',
 	},
 	description: `This bot was made with the puspose to cure Str1ke's boredom and help students.`,
 	thumbnail: {
