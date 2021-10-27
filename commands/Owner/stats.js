@@ -15,31 +15,32 @@ exports.run = (client, message, args, level) => { // eslint-disable-line no-unus
 	fields: [
 		{
 			name: `Mem Usage: \`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``,
-      value: `\`==============================\``
+      value: `\`==============================\``,
+
 		},
 		{
-			name: `Uptime: \`${duration}\``
-      value: `\`==============================\``
+			name: `Uptime: \`${duration}\``,
+      value: `\`==============================\``,
 		},
 		{
-			name: `Users: \`${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}\``
-      value: `\`==============================\``
+			name: `Users: \`${client.guilds.cache.map(g => g.memberCount).reduce((a, b) => a + b).toLocaleString()}\``,
+      value: `\`==============================\``,
 		},
 		{
-			name: `Servers: \`${client.guilds.cache.size.toLocaleString()}\``
-      value: `\`==============================\``
+			name: `Servers: \`${client.guilds.cache.size.toLocaleString()}\``,
+      value: `\`==============================\``,
 		},
 		{
-			name: `Channels: \`${client.channels.cache.size.toLocaleString()}\``
-      value: `\`==============================\``
+			name: `Channels: \`${client.channels.cache.size.toLocaleString()}\``,
+      value: `\`==============================\``,
 		},
 		{
-			name: `DiscordJS Ver.: \`v${version}\``
-      value: `\`==============================\``
+			name: `DiscordJS Ver.: \`v${version}\``,
+      value: `\`==============================\``,
 		},
 		{
-			name: `Node Ver.: \`${process.version}\``
-      value: `\`==============================\``
+			name: `Node Ver.: \`${process.version}\``,
+      value: `\`==============================\``,
 		},
 	],
 	timestamp: new Date(),
